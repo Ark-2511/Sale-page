@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Way Up – Gọi món và thanh toán QR cho quán cà phê</title>
+  <meta name="description" content="Way Up: màn hình gọi món tương tác, thanh toán QR tự đối soát và trang quản lý menu, kho cho quán cà phê. Chạy trên iPad và máy tính, vẫn hoạt động khi mất mạng.">
+  <meta property="og:title" content="Way Up – Gọi món và thanh toán QR cho quán cà phê">
+  <meta property="og:description" content="Khách tự gọi món, tự thanh toán. Đổi mới và tối ưu hóa quy trình.">
+  <meta property="og:image" content="assets/img/logo.png">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Biểu tượng dùng lại nhiều lần -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17l9-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<a class="skip" href="#noi-dung">Bỏ qua tới nội dung</a>
+
+<!-- ===== ĐẦU TRANG ===== -->
+<header class="header" id="dau-trang">
+  <div class="wrap header__row">
+    <a class="brand" href="./" aria-label="Way Up – về trang chính">
+      <img class="brand__logo" src="assets/img/logo.png" alt="" width="44" height="44">
+      <span class="brand__name">Way Up</span>
+    </a>
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="#san-pham">Sản phẩm</a>
+      <a href="#phan-cung">Phần cứng</a>
+      <a href="#bang-gia">Bảng giá</a>
+      <a href="#co-gi-moi">Có gì mới</a>
+    </nav>
+
+    <div class="header__actions">
+      <a class="link hide-md" href="#lien-he">Hỗ trợ</a>
+      <a class="link hide-md" href="https://wayup.id.vn/admin/">Đăng nhập</a>
+      <a class="btn btn--primary btn--sm hide-sm" href="#bang-gia">Đăng ký</a>
+      <a class="icon-btn cart" href="#phan-cung" aria-label="Giỏ hàng">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2.5 3h2.6l2.3 11.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.2L21 7H6"/></svg>
+        <span class="cart__count" data-cart-count hidden>0</span>
+      </a>
+      <button class="icon-btn burger" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="menu-gon" data-burger>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="menu-gon" aria-label="Menu thu gọn" hidden>
+    <div class="wrap mobile-nav__list">
+      <a href="#san-pham">Sản phẩm</a>
+      <a href="#phan-cung">Phần cứng</a>
+      <a href="#bang-gia">Bảng giá</a>
+      <a href="#co-gi-moi">Có gì mới</a>
+      <hr>
+      <a href="#lien-he">Hỗ trợ</a>
+      <a href="https://wayup.id.vn/admin/">Đăng nhập</a>
+      <a class="mobile-nav__strong" href="#bang-gia">Đăng ký</a>
+    </div>
+  </nav>
+</header>
+
+<main id="noi-dung">
+
+  <!-- ===== MỞ ĐẦU ===== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <span class="pill"><span class="pill__dot"></span>Giải pháp gọi món cho quán cà phê</span>
+        <h1 id="hero-title">Khách tự gọi món, tự thanh toán. <span style="white-space: nowrap;">Đổi mới</span> và tối ưu hóa quy trình.</h1>
+        <p class="lead">Way Up gồm màn hình gọi món tương tác tại quầy, thanh toán QR tự đối soát và trang quản lý menu, kho, nhân viên — chạy trên iPad và máy tính, vẫn hoạt động khi mất mạng.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary btn--lg" href="#bang-gia">Bắt đầu ngay <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--outline btn--lg" href="#lien-he">Liên hệ tư vấn</a>
+        </div>
+        <p class="small muted">Muốn xem trước? <a href="https://wayup.id.vn/admin/">Mở bản dùng thử</a> (tài khoản <strong>demo</strong> / <strong>12345678</strong>)</p>
+      </div>
+
+      <div class="hero__visual" role="img" aria-label="Màn hình gọi món Way Up trên máy tính bảng, kèm thẻ đơn đã thanh toán">
+        <div class="hero__blob" aria-hidden="true"></div>
+        <div class="tablet">
+          <div class="tablet__screen">
+            <div class="tablet__top">
+              <span class="tablet__hello">Chào mừng bạn</span>
+              <span class="tablet__chip">Tìm ly dành cho bạn</span>
+            </div>
+            <div class="tablet__items">
+              <div class="t-item"><img src="assets/img/mon/GaoBeo.webp" alt=""><b>Gạo Béo</b><span>55K</span></div>
+              <div class="t-item"><img src="assets/img/mon/ComNonGaoGion.webp" alt=""><b>Cốm Non Gạo Giòn</b><span>65K</span></div>
+              <div class="t-item"><img src="assets/img/mon/GaoMay.webp" alt=""><b>Gạo Mây</b><span>55K</span></div>
+            </div>
+            <div class="tablet__tabs">
+              <span class="is-on">Signature</span><span>Cafe</span><span>Matcha Cacao</span><span>Tea</span>
+            </div>
+          </div>
+        </div>
+        <div class="paid-card">
+          <div class="paid-card__row">
+            <img src="assets/img/mon/GaoMuoi.webp" alt="">
+            <div>
+              <b>Gạo Muối × 2</b>
+              <span class="muted">Đường 70% · Đá 50%</span>
+              <b>110.000₫</b>
+            </div>
+          </div>
+          <div class="paid-card__ok"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Đã nhận tiền · Mã 7ZA3</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ĐIỂM NỔI BẬT ===== -->
+  <section class="strip" aria-label="Điểm nổi bật">
+    <div class="wrap strip__grid">
+      <div class="strip__item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M8 21h8"/></svg>
+        <div><b>Chạy trên iPad và máy tính</b><span>Ngang hay dọc đều dùng được.</span></div>
+      </div>
+      <div class="strip__item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>
+        <div><b>QR VietQR tự đối soát</b><span>Tiền về là màn hình tự báo.</span></div>
+      </div>
+      <div class="strip__item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/></svg>
+        <div><b>Không sợ mất mạng</b><span>Đơn được giữ và tự gửi lại.</span></div>
+      </div>
+      <div class="strip__item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><b>Xác thực 2 lớp</b><span>Bảo vệ tiền và dữ liệu quán.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SẢN PHẨM ===== -->
+  <section class="section" id="san-pham" aria-labelledby="sp-title">
+    <div class="wrap stack-xl">
+      <header class="section-head">
+        <span class="eyebrow">Sản phẩm</span>
+        <h2 id="sp-title">Mọi thứ quán cần, từ quầy gọi món đến sổ sách.</h2>
+        <p class="lead">Ba sản phẩm dùng chung một tài khoản. Sửa menu ở trang quản lý là màn hình quầy cập nhật theo.</p>
+      </header>
+
+      <!-- 01 -->
+      <article class="feat" id="man-hinh-goi-mon">
+        <div class="feat__text">
+          <span class="feat__num">01 · Màn hình gọi món</span>
+          <h3>Menu tương tác giúp khách chọn nhanh hơn</h3>
+          <p class="muted">Mỗi món có thanh khẩu vị đậm, ngọt, ngậy và gợi ý sẵn mức đường, đá. Khách còn phân vân thì bấm “Tìm ly dành cho bạn”.</p>
+          <ul class="checks">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Giao diện theo màu, logo và phông chữ của quán</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Chế độ sáng và tối cho quán ánh sáng yếu</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Kích hoạt máy quầy chỉ bằng một đường link</li>
+          </ul>
+        </div>
+        <div class="feat__visual feat__visual--sky" aria-hidden="true">
+          <div class="card item-card">
+            <div class="item-card__head">
+              <div class="item-card__img"><img src="assets/img/mon/GaoBeo.webp" alt=""></div>
+              <div>
+                <span class="tag">Best seller</span>
+                <b class="item-card__name">Gạo Béo</b>
+                <span class="muted small">Signature</span>
+                <b class="price">55K</b>
+              </div>
+            </div>
+            <div class="taste">
+              <div class="taste__row"><span>Độ đậm</span><span class="bar bar--coffee"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+              <div class="taste__row"><span>Độ ngọt</span><span class="bar bar--sky"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+              <div class="taste__row"><span>Độ ngậy</span><span class="bar bar--butter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+            </div>
+            <div class="chips">
+              <span class="chip chip--on">★ Đường 70%</span>
+              <span class="chip chip--on">★ Đá 50%</span>
+              <span class="chip">Ít đá</span>
+            </div>
+            <div class="fake-btn">Thêm vào giỏ</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article class="feat feat--rev" id="thanh-toan-qr">
+        <div class="feat__text">
+          <span class="feat__num">02 · Thanh toán QR</span>
+          <h3>Tiền về là biết, không cần soi điện thoại</h3>
+          <p class="muted">Mỗi đơn có một mã QR VietQR riêng. Khách chuyển khoản xong, màn hình báo “Đã nhận tiền” và hiện mã nhận đồ. Thu ngân không phải dò sao kê.</p>
+          <ul class="checks">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tự đối soát qua SePay, ghép tay khi cần</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Mất mạng vẫn hiện QR, đơn tự gửi khi có mạng</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hoàn tiền và đổi tài khoản nhận tiền cần mã 6 số</li>
+          </ul>
+        </div>
+        <div class="feat__visual feat__visual--sand feat__visual--pair" aria-hidden="true">
+          <div class="card cart-card">
+            <b>Giỏ hàng</b>
+            <div class="cart-line"><img src="assets/img/mon/MatchaLatteMeiji.webp" alt=""><span>Matcha Latte Meiji</span><span class="muted">×1</span></div>
+            <div class="cart-line"><img src="assets/img/mon/TraVaiMocDamVi.webp" alt=""><span>Trà vải mộc đậm vị</span><span class="muted">×1</span></div>
+            <div class="cart-card__code">
+              <span class="muted small">Nội dung chuyển khoản</span>
+              <b class="mono">DH8K2Q7ZA3</b>
+            </div>
+          </div>
+          <div class="card done-card">
+            <span class="done-card__icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <b>Đã nhận tiền</b>
+            <span class="small">Mã nhận đồ của bạn</span>
+            <b class="done-card__code">7ZA3</b>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="feat" id="trang-quan-ly">
+        <div class="feat__text">
+          <span class="feat__num">03 · Trang quản lý</span>
+          <h3>Menu, kho và tiền vào — xem ở một chỗ</h3>
+          <p class="muted">Sửa giá, thêm món, nhập kho và đối soát chuyển khoản ngay trên iPad. Mọi thay đổi đều có nhật ký: ai sửa, sửa gì, lúc nào.</p>
+          <ul class="checks">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tìm món, nguyên liệu hay mã nhận đồ trong một ô</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Theo dõi các máy quầy đang kết nối</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Phân quyền chủ quán, quản lý, thu ngân</li>
+          </ul>
+        </div>
+        <div class="feat__visual feat__visual--mist" aria-hidden="true">
+          <div class="card admin-card">
+            <div class="search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              Tìm món, nguyên liệu, mã nhận đồ…
+            </div>
+            <b>Nhật ký thay đổi · Hôm nay</b>
+            <div class="log">
+              <div class="log__row"><div><b>Gạo Muối: 50K → 55K</b><span class="muted">Chủ quán · Lưu &amp; cập nhật màn hình quầy</span></div><span class="muted">14:02</span></div>
+              <div class="log__row"><div><b>Nhập thêm 5 kg sữa tươi</b><span class="muted">Quản lý · Kho</span></div><span class="muted">10:47</span></div>
+              <div class="log__row"><div><b>Ghép tay chuyển khoản DH3M…</b><span class="muted">Thu ngân · Lý do: khách ghi sai nội dung</span></div><span class="muted">09:15</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sắp ra mắt -->
+      <div class="soon">
+        <div class="soon__main">
+          <span class="soon__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg></span>
+          <div>
+            <div class="soon__title"><b>Trợ lý Way Up</b><span class="tag tag--orange">Sắp ra mắt</span></div>
+            <p class="muted">Hỏi nhanh về doanh thu, món bán chạy và tồn kho bằng tiếng Việt.</p>
+          </div>
+        </div>
+        <a class="btn btn--outline" href="mailto:wayupsent@gmail.com?subject=Nh%E1%BA%ADn%20tin%20Tr%E1%BB%A3%20l%C3%BD%20Way%20Up">Nhận tin khi ra mắt</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHẦN CỨNG ===== -->
+  <section class="section section--dark" id="phan-cung" aria-labelledby="pc-title">
+    <div class="wrap stack-lg">
+      <header class="section-head section-head--split">
+        <div>
+          <span class="eyebrow">Phần cứng</span>
+          <h2 id="pc-title">Thiết bị đã cài sẵn, cắm điện là bán.</h2>
+          <p class="lead">Mua trọn bộ từ Way Up, hoặc dùng iPad sẵn có của quán.</p>
+        </div>
+      </header>
+      <div class="cards">
+        <article class="hw">
+          <div class="hw__img"><img src="assets/img/phan-cung/man-hinh-goi-mon.webp" alt="Màn hình tương tác gọi món đang hiện menu Gạo Café" width="1200" height="800" loading="lazy"></div>
+          <h3>Màn hình tương tác gọi món</h3>
+          <p>[Thông số: màn hình, dung lượng, bảo hành]</p>
+          <button class="btn btn--light btn--sm" type="button" data-add-cart="Màn hình tương tác gọi món">Thêm vào giỏ</button>
+        </article>
+        <article class="hw">
+          <div class="hw__img"><img src="assets/img/phan-cung/chan-de-ke-quay.webp" alt="Chân đế quầy màu trắng gắn màn hình gọi món" width="1200" height="900" loading="lazy"></div>
+          <h3>Chân đế và kệ quầy</h3>
+          <p>[Thông số: xoay ngang/dọc, khóa chống trộm, chất liệu]</p>
+          <button class="btn btn--light btn--sm" type="button" data-add-cart="Chân đế và kệ quầy">Thêm vào giỏ</button>
+        </article>
+        <article class="hw">
+          <div class="hw__img"><img src="assets/img/phan-cung/chan-de-ke-quay.webp" alt="Trọn bộ quầy: màn hình tương tác gọi món gắn trên chân đế" width="1200" height="900" loading="lazy"></div>
+          <h3>Trọn bộ quầy</h3>
+          <p>[Gồm: màn hình tương tác gọi món, chân đế, cài đặt tại quán]</p>
+          <button class="btn btn--accent btn--sm" type="button" data-add-cart="Trọn bộ quầy">Thêm vào giỏ</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BẢNG GIÁ ===== -->
+  <section class="section" id="bang-gia" aria-labelledby="bg-title">
+    <div class="wrap stack-lg">
+      <header class="section-head section-head--center">
+        <span class="eyebrow">Bảng giá</span>
+        <h2 id="bg-title">Trả theo số màn hình quầy</h2>
+        <p class="lead">Gói nào cũng có đủ trang quản lý và thanh toán QR. Giá chưa gồm thiết bị.</p>
+      </header>
+      <div class="cards">
+        <article class="plan">
+          <div><h3>Khởi đầu</h3><span class="muted">1 màn hình quầy</span></div>
+          <div class="plan__price"><b>[GIÁ]</b><span class="muted">/ tháng</span></div>
+          <ul class="checks checks--sm">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Màn hình gọi món</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Thanh toán QR tự đối soát</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Menu, kho, nhật ký thay đổi</li>
+          </ul>
+          <a class="btn btn--outline btn--block" href="#lien-he">Bắt đầu ngay</a>
+        </article>
+        <article class="plan plan--hot">
+          <span class="plan__badge">Phổ biến</span>
+          <div><h3>Tiêu chuẩn</h3><span class="muted">3 màn hình quầy</span></div>
+          <div class="plan__price"><b>[GIÁ]</b><span class="muted">/ tháng</span></div>
+          <ul class="checks checks--sm">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Mọi thứ trong gói Khởi đầu</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Giao diện riêng theo thương hiệu quán</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Phân quyền quản lý, thu ngân</li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="#lien-he">Bắt đầu ngay</a>
+        </article>
+        <article class="plan">
+          <div><h3>Chuỗi cửa hàng</h3><span class="muted">Nhiều chi nhánh</span></div>
+          <div class="plan__price"><b>Liên hệ</b></div>
+          <ul class="checks checks--sm">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Mọi thứ trong gói Tiêu chuẩn</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Số màn hình theo nhu cầu</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hỗ trợ cài đặt tại quán</li>
+          </ul>
+          <a class="btn btn--outline btn--block" href="#lien-he">Liên hệ tư vấn</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CÓ GÌ MỚI ===== -->
+  <section class="section section--white" id="co-gi-moi" aria-labelledby="new-title">
+    <div class="wrap stack-lg">
+      <header class="section-head">
+        <span class="eyebrow">Có gì mới</span>
+        <h2 id="new-title">Cập nhật gần đây</h2>
+      </header>
+      <div class="cards">
+        <article class="news">
+          <time datetime="2026-11-09">09/11/2026</time>
+          <h3>Kiểm tra mã đơn hàng và chuyển khoản</h3>
+          <p class="muted">Gõ mã nhận đồ hoặc mã DH… là biết ngay đơn đã trả tiền chưa. Khoản chuyển ghi sai nội dung được ghép tay, có lưu lý do.</p>
+        </article>
+        <article class="news">
+          <time datetime="2026-11-09">09/11/2026</time>
+          <h3>Cập nhật trực tiếp tồn kho</h3>
+          <p class="muted">Nhập thêm hàng và sửa số đếm thực tế ngay trên iPad. Mỗi thay đổi đều được ghi vào nhật ký.</p>
+        </article>
+        <article class="news">
+          <time datetime="2026-11-08">08/11/2026</time>
+          <h3>Bản dùng thử cho khách</h3>
+          <p class="muted">Trải nghiệm trang quản lý với dữ liệu mẫu, không cần đăng ký. Dữ liệu tự làm mới mỗi đêm.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIÊN HỆ ===== -->
+  <section class="section section--tight" id="lien-he" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="cta">
+        <div class="cta__text">
+          <h2 id="cta-title">Sẵn sàng đưa quán lên Way Up?</h2>
+          <p>Gọi hoặc gửi email, chúng tôi sẽ tư vấn gói và thiết bị phù hợp với quán bạn.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--white btn--lg" href="tel:09xxxxxxxx">Gọi 09xxxxxxxx</a>
+          <a class="btn btn--ghost-light btn--lg" href="mailto:wayupsent@gmail.com">Gửi email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== CHÂN TRANG ===== -->
+<footer class="footer">
+  <div class="wrap stack-lg">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="./" aria-label="Way Up – về trang chính">
+          <img class="brand__logo" src="assets/img/logo.png" alt="" width="40" height="40">
+          <span class="brand__name">Way Up</span>
+        </a>
+        <p class="muted">Hệ thống gọi món và thanh toán cho quán cà phê Việt Nam.</p>
+        <p class="muted footer__contact">
+          <span>Hotline: <a href="tel:09xxxxxxxx">09xxxxxxxx</a></span>
+          <span>Email: <a href="mailto:wayupsent@gmail.com">wayupsent@gmail.com</a></span>
+        </p>
+      </div>
+      <nav aria-label="Sản phẩm">
+        <b>Sản phẩm</b>
+        <a href="#man-hinh-goi-mon">Màn hình gọi món</a>
+        <a href="#thanh-toan-qr">Thanh toán QR</a>
+        <a href="#trang-quan-ly">Trang quản lý</a>
+        <a href="#phan-cung">Phần cứng</a>
+      </nav>
+      <nav aria-label="Công ty">
+        <b>Công ty</b>
+        <a href="#bang-gia">Bảng giá</a>
+        <a href="#co-gi-moi">Có gì mới</a>
+        <a href="#lien-he">Liên hệ</a>
+      </nav>
+      <nav aria-label="Hỗ trợ">
+        <b>Hỗ trợ</b>
+        <a href="https://wayup.id.vn/admin/">Đăng nhập trang quản lý</a>
+        <a href="tel:09xxxxxxxx">Gọi hỗ trợ</a>
+        <a href="mailto:wayupsent@gmail.com">Gửi email</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> Way Up · wayup.id.vn</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MẠNG XÃ HỘI (luôn ở góc dưới phải) ===== -->
+<!-- TODO: thay 2 đường link dưới đây bằng trang Facebook / Instagram của công ty -->
+<div class="social">
+  <a class="social__btn social__btn--fb" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook của Way Up">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21z"/></svg>
+  </a>
+  <a class="social__btn social__btn--ig" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram của Way Up">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor"/></svg>
+  </a>
+</div>
+
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
